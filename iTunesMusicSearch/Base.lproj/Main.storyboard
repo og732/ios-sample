@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="V6A-09-XKc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="1tQ-Nw-81O">
+            <objects>
+                <navigationController id="V6A-09-XKc" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="vmS-fb-AZN">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="lhs-pl-OVf" kind="relationship" relationship="rootViewController" id="2ql-oU-Lbw"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hhf-dd-5r9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-938" y="344"/>
+        </scene>
+        <!--Music Search-->
+        <scene sceneID="Vkz-Nq-U4b">
+            <objects>
+                <tableViewController id="lhs-pl-OVf" customClass="ListViewController" customModule="iTunesMusicSearch" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="bdB-lx-wFk">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="Hq0-Hf-6yR">
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="lhs-pl-OVf" id="LR7-Cl-fDM"/>
+                            </connections>
+                        </searchBar>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="uz8-r4-Sig" customClass="ListCell" customModule="iTunesMusicSearch" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uz8-r4-Sig" id="SsR-gJ-Kdt">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bKK-h9-icE">
+                                            <rect key="frame" x="0.0" y="0.0" width="43" height="43"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="bKK-h9-icE" secondAttribute="height" multiplier="1:1" id="JYW-Lf-r0W"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Track" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pcb-vr-B5S">
+                                            <rect key="frame" x="51" y="4" width="541" height="20"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artist" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5b5-ga-qHe">
+                                            <rect key="frame" x="51" y="25" width="541" height="14"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="Pcb-vr-B5S" secondAttribute="trailing" constant="8" id="4SJ-DH-UmV"/>
+                                        <constraint firstAttribute="bottom" secondItem="5b5-ga-qHe" secondAttribute="bottom" constant="4" id="8ft-00-3wN"/>
+                                        <constraint firstItem="bKK-h9-icE" firstAttribute="leading" secondItem="SsR-gJ-Kdt" secondAttribute="leading" id="DRg-ap-TEl"/>
+                                        <constraint firstItem="Pcb-vr-B5S" firstAttribute="top" secondItem="SsR-gJ-Kdt" secondAttribute="top" constant="4" id="Eug-bK-5l4"/>
+                                        <constraint firstAttribute="trailing" secondItem="5b5-ga-qHe" secondAttribute="trailing" constant="8" id="UaV-od-vCq"/>
+                                        <constraint firstItem="Pcb-vr-B5S" firstAttribute="leading" secondItem="bKK-h9-icE" secondAttribute="trailing" constant="8" id="gI6-rl-998"/>
+                                        <constraint firstItem="5b5-ga-qHe" firstAttribute="leading" secondItem="bKK-h9-icE" secondAttribute="trailing" constant="8" id="jIZ-HO-Z9b"/>
+                                        <constraint firstAttribute="bottom" secondItem="bKK-h9-icE" secondAttribute="bottom" id="lOZ-sd-3dI"/>
+                                        <constraint firstItem="bKK-h9-icE" firstAttribute="top" secondItem="SsR-gJ-Kdt" secondAttribute="top" id="uvn-U0-Pqh"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <inset key="separatorInset" minX="43" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <connections>
+                                    <outlet property="artistLabel" destination="5b5-ga-qHe" id="Fhz-2t-iPx"/>
+                                    <outlet property="artworkImageView" destination="bKK-h9-icE" id="Sld-wU-RdJ"/>
+                                    <outlet property="trackLabel" destination="Pcb-vr-B5S" id="750-Z7-70U"/>
+                                    <segue destination="A5A-lo-aAH" kind="show" id="Vp1-q0-KGq"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="lhs-pl-OVf" id="5Qd-q0-CDX"/>
+                            <outlet property="delegate" destination="lhs-pl-OVf" id="l9S-YV-uEU"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Music Search" id="dad-Hs-cIW"/>
+                    <connections>
+                        <outlet property="searchBar" destination="Hq0-Hf-6yR" id="DER-Aw-6Rq"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="96z-0e-sFw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-238" y="344"/>
+        </scene>
+        <!--AV Player View Controller-->
+        <scene sceneID="3yq-dJ-C04">
+            <objects>
+                <avPlayerViewController videoGravity="AVLayerVideoGravityResizeAspect" id="A5A-lo-aAH" customClass="DetailViewController" customModule="iTunesMusicSearch" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YPt-A9-YVG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="504" y="344"/>
+        </scene>
+    </scenes>
+</document>
